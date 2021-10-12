@@ -16,11 +16,18 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 void _print_char(char c) {
-    asm volatile (
-        "mov %[char] , %al\n\t"
-        "movb $0x0e, %ah\n\t" 
-        "int  $0x10" : : [charPrint] "g" (c));
+    // asm volatile (
+    //     "mov %[char] , %al\n\t"
+    //     "movb $0x0e, %ah\n\t" 
+    //     "int  $0x10" : : [charPrint] "g" (c));
     return;
+ 
+int d;
+char *e = &c;
+
+asm volatile ("mov %[e], %[d]"
+   : [d] "=rm" (d)
+   : [e] "rm" (*e));
 } 
 
 // See any errors in our file? Have we just forgotten to add something? Send Issue to our github repository:
