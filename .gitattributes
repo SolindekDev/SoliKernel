@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+*.c   diff=cpp
+*.h   diff=cpp
+*.dtsi diff=dts
+*.dts  diff=dts
+*.s diff=asm
