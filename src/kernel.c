@@ -41,8 +41,8 @@
 //
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-#include "lib/power.c"
-#include "lib/print.c"
+#include "lib/power.h"
+#include "lib/print.h"
 
 // Main void of kernel
 int __kernel__main() {

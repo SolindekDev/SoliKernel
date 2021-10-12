@@ -21,13 +21,9 @@ void _print_char(char c) {
     //     "movb $0x0e, %ah\n\t" 
     //     "int  $0x10" : : [charPrint] "g" (c));
     return;
- 
-int d;
-char *e = &c;
 
-asm volatile ("mov %[e], %[d]"
-   : [d] "=rm" (d)
-   : [e] "rm" (*e));
+    asm volatile ("mov %[d] , %al\n\t"
+        : [d] "=rm" (c));
 } 
 
 // See any errors in our file? Have we just forgotten to add something? Send Issue to our github repository:
