@@ -41,12 +41,13 @@
 //
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-#include "lib/power.h"
-#include "lib/print.h"
+#include "lib/power.c"
+#include "lib/std.c"
 
 // Main void of kernel
 int __kernel__main() {
     // In this void you can just make your system with our libarary
+    printf_char('H')
     return 0;
 }
 

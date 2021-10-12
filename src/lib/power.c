@@ -11,12 +11,14 @@
 //  File name: kernel.c
 //  File language: C programming language
 //  File extension: .c
-//  File usage: Main kernel file
+//  File usage: Power lib file
 //
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+#pragma once
+
 // Void that will be shutdown operating system
-void _shutdown() {
+void shutdown() {
     asm volatile (
         "mov %ax, 0x1000"
         "mov %ax, ss"
@@ -30,7 +32,7 @@ void _shutdown() {
 }
 
 // Void that will be rebooting our operating system
-void _reboot() {
+void reboot() {
     // This works
     // Code under is from linux source code
     // https://github.com/torvalds/linux/blob/v4.2/arch/x86/realmode/rm/reboot.S#L114
